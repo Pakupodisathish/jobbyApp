@@ -1,3 +1,103 @@
+
+
+# Jobby App - Job Search Portal
+
+Jobby App is a dynamic and responsive job search application built with React. It allows users to log in, search for jobs with various filters, and view detailed information about each job opportunity. The application is designed to provide a seamless user experience with protected routes and asynchronous data fetching from a live API.
+
+### ✨ Live Demo
+
+**[Jobby App Live Demo](https://pakupodisathish.github.io/jobbyApp/)**
+
+---
+
+### 🎬 A Quick Look
+
+*(It's highly recommended to add a screenshot or a GIF of your running application here. You can use tools like Giphy Capture or ScreenToGif to record a short demo.)*
+
+![Jobby App Screenshot](https://assets.ccbp.in/frontend/content/react-js/jobby-app-readme-img.png)
+
+---
+
+## **Features**
+
+### **Authentication & Security**
+* **User Login:** Secure login page to authenticate users.
+* **Persistent Login:** Uses JWT tokens stored in cookies to maintain user sessions.
+* **Protected Routes:** Key routes like Home, Jobs, and Job Details are accessible only to authenticated users.
+* **Smart Redirection:**
+    * Unauthenticated users trying to access protected pages are redirected to the Login page.
+    * Authenticated users trying to access the Login page are redirected to the Home page.
+* **Logout:** Functionality to log out and terminate the session.
+
+### **Job Searching & Filtering**
+* **Jobs List:** Fetches and displays a list of available jobs from the API.
+* **Search Functionality:** Users can search for jobs based on their title.
+* **Filter by Employment Type:** Filter jobs by selecting one or more employment types (e.g., Full Time, Part Time, Internship).
+* **Filter by Salary Range:** Filter jobs based on minimum salary packages.
+* **Combined Filters:** All filters (search, employment type, salary) work in conjunction to refine search results.
+
+### **User Interface & Experience**
+* **Responsive Design:** The interface is built to be responsive and works on various screen sizes.
+* **Loading & Failure States:**
+    * Displays a loading spinner while fetching data from the API.
+    * Shows a clean failure view if an API call is unsuccessful, with a "Retry" button to attempt the fetch again.
+    * Displays a "No Jobs Found" view when search criteria yield no results.
+* **Detailed Job View:** Clicking on a job card navigates to a detailed view showing:
+    * Comprehensive job description.
+    * Required skills with icons.
+    * A glimpse into "Life at the Company".
+    * A list of similar jobs to encourage further exploration.
+    * A link to the company's official website.
+* **Intuitive Navigation:** A persistent header allows easy navigation to Home and Jobs, and to log out.
+* **Not Found Page:** A custom 404 page for any invalid URL paths.
+
+---
+
+## **Technologies Used**
+
+* **Core:** React.js, JavaScript (ES6+), HTML5, CSS3
+* **Routing:** `react-router-dom`
+* **API Interaction:** Browser `fetch` API
+* **Authentication:** `js-cookie` for JWT token management
+* **UI Components:** `react-loader-spinner` for loading indicators
+
+---
+
+## **Setup and Run**
+
+Follow these steps to get the project up and running on your local machine.
+
+**1. Clone the repository:**
+```bash
+git clone [https://github.com/your-username/jobby-app.git](https://github.com/your-username/jobby-app.git)
+cd jobby-app
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 In this project, let's build a **Jobby App** by applying the concepts we have learned till now.
 
 ### Refer to videos below:
