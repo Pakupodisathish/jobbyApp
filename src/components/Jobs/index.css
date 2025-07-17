@@ -1,0 +1,197 @@
+.jobs-bg-container {
+  background-color: #000000;
+  padding: 10px;
+}
+.jobs-content-container {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .jobs-content-container {
+    flex-direction: row;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+.jobs-content {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .jobs-content {
+    width: 30%;
+  }
+}
+.mobile-search-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  border: 2px solid #b6c5ff;
+  width: 100%;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .mobile-search-container {
+    display: none;
+  }
+}
+.search-input {
+  background-color: transparent;
+  color: #f8fafc;
+  font-size: 20px;
+  font-weight: 900;
+  width: 100%;
+  padding: 5px;
+}
+.search-input::placeholder {
+  color: #64748b;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.search-btn {
+  background-color: #202020;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+}
+.search-icon {
+  height: 20px;
+  width: 20px;
+  color: #f1f5f9;
+}
+.profile-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  width: 100%;
+  background-size: cover;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 10px;
+}
+.profile-img {
+  width: 60px;
+  height: 60px;
+}
+.name {
+  color: #6366f1;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.designation {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #2c364c;
+}
+.retry-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.retry-btn {
+  background-color: #4f46e5;
+  padding: 5px 5px;
+  color: #ffffff;
+  font-size: 15px;
+}
+.line {
+  width: 100%;
+  border: 2px solid #7e858e;
+}
+.categories-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.category-heading {
+  font-size: 15px;
+  color: #f8fafc;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.categories-items-container {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+.each-category {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.label {
+  margin-left: 5px;
+  font-size: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+.job-items-container {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+}
+@media(min-width:768px){
+  .job-items-container{
+    width:70%;
+    margin-left: 30px;
+  }
+}
+.desktop-search-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  border: 2px solid #b6c5ff;
+  width: 450px;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .desktop-search-container {
+    display: none;
+  }
+}
+.jobs-items {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+.no-jobs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0px;
+}
+.no-jobs-img {
+  width: 80%;
+  margin-bottom: 10px;
+}
+.no-jobs-heading {
+  font-size: 20px;
+  color: #f8fafc;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 900;
+}
+.no-jobs-description {
+  font-size: 15px;
+  color: #7e858e;
+  font-weight: 800;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
