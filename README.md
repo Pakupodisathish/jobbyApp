@@ -1,5 +1,3 @@
-
-
 # Jobby App - Job Search Portal
 
 Jobby App is a dynamic and responsive job search application built with React. It allows users to log in, search for jobs with various filters, and view detailed information about each job opportunity. The application is designed to provide a seamless user experience with protected routes and asynchronous data fetching from a live API.
@@ -12,43 +10,40 @@ Jobby App is a dynamic and responsive job search application built with React. I
 
 ### 🎬 A Quick Look
 
-*(It's highly recommended to add a screenshot or a GIF of your running application here. You can use tools like Giphy Capture or ScreenToGif to record a short demo.)*
-
-![Jobby App Screenshot](https://assets.ccbp.in/frontend/content/react-js/jobby-app-readme-img.png)
+| Login Page                                                                                                     | Home Page              | Jobs Page              |
+| -------------------------------------------------------------------------------------------------------------- | ---------------------- | ---------------------- |
+| ![Login Page](https://github.com/user-attachments/assets/3b367c33-b779-48da-b562-a753220ce836) | *(Add Screenshot Here)* | *(Add Screenshot Here)* |
 
 ---
 
 ## **Features**
 
 ### **Authentication & Security**
-* **User Login:** Secure login page to authenticate users.
-* **Persistent Login:** Uses JWT tokens stored in cookies to maintain user sessions.
+* **User Login:** Secure login page to authenticate users with provided credentials.
+* **Persistent Login:** Uses JWT tokens stored in browser cookies to maintain user sessions.
 * **Protected Routes:** Key routes like Home, Jobs, and Job Details are accessible only to authenticated users.
-* **Smart Redirection:**
-    * Unauthenticated users trying to access protected pages are redirected to the Login page.
-    * Authenticated users trying to access the Login page are redirected to the Home page.
-* **Logout:** Functionality to log out and terminate the session.
+* **Smart Redirection:** Automatically redirects users based on their authentication status to provide a seamless experience.
+* **Logout:** Functionality to log out and securely terminate the session.
 
 ### **Job Searching & Filtering**
 * **Jobs List:** Fetches and displays a list of available jobs from the API.
-* **Search Functionality:** Users can search for jobs based on their title.
+* **Keyword Search:** Users can search for jobs based on their title.
 * **Filter by Employment Type:** Filter jobs by selecting one or more employment types (e.g., Full Time, Part Time, Internship).
 * **Filter by Salary Range:** Filter jobs based on minimum salary packages.
-* **Combined Filters:** All filters (search, employment type, salary) work in conjunction to refine search results.
+* **Combined Filters:** All filters work in conjunction to refine search results.
 
 ### **User Interface & Experience**
-* **Responsive Design:** The interface is built to be responsive and works on various screen sizes.
-* **Loading & Failure States:**
-    * Displays a loading spinner while fetching data from the API.
-    * Shows a clean failure view if an API call is unsuccessful, with a "Retry" button to attempt the fetch again.
+* **Responsive Design:** The interface is built to be fully responsive and works on various screen sizes.
+* **Asynchronous States:**
+    * Displays a loading spinner while fetching data.
+    * Shows a clean failure view with a "Retry" button if an API call is unsuccessful.
     * Displays a "No Jobs Found" view when search criteria yield no results.
 * **Detailed Job View:** Clicking on a job card navigates to a detailed view showing:
-    * Comprehensive job description.
-    * Required skills with icons.
-    * A glimpse into "Life at the Company".
+    * A comprehensive job description.
+    * Required skills with corresponding icons.
+    * A glimpse into "Life at the Company" with text and images.
     * A list of similar jobs to encourage further exploration.
-    * A link to the company's official website.
-* **Intuitive Navigation:** A persistent header allows easy navigation to Home and Jobs, and to log out.
+* **External Linking:** A "Visit" button on the job details page opens the company's official website in a new tab.
 * **Not Found Page:** A custom 404 page for any invalid URL paths.
 
 ---
@@ -63,14 +58,79 @@ Jobby App is a dynamic and responsive job search application built with React. I
 
 ---
 
+## **API Reference**
+
+### **Login API**
+* **API:** `https://apis.ccbp.in/login`
+* **Method:** `POST`
+* **Sample Success Output:**
+    ```json
+    {
+      "jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhaHVsIiwicm9sZSI6IlBSSU1FX1VTRVIiLCJpYXQiOjE2MTk2Mjg2MTN9. nZDlFsnSWArLKKeF0QbmdVfLgzUbx1BGJsqa2kc_21Y"
+    }
+    ```
+
+### **Profile API**
+* **API:** `https://apis.ccbp.in/profile`
+* **Method:** `GET`
+* **Sample Output:**
+    ```json
+    {
+      "profile_details": {
+        "name": "Rahul Attuluri",
+        "profile_image_url": "[https://assets.ccbp.in/frontend/react-js/male-avatar-img.png](https://assets.ccbp.in/frontend/react-js/male-avatar-img.png)",
+        "short_bio": "Lead Software Developer and AI-ML expert"
+      }
+    }
+    ```
+
+### **Jobs API**
+* **API:** `https://apis.ccbp.in/jobs`
+* **Method:** `GET`
+* **Sample Output:**
+    ```json
+    {
+      "jobs": [
+        {
+          "company_logo_url": "[https://assets.ccbp.in/frontend/react-js/jobby-app/facebook-img.png](https://assets.ccbp.in/frontend/react-js/jobby-app/facebook-img.png)",
+          "employment_type": "Full Time",
+          "id": "d6019453-f864-4a2f-8230-6a9642a59466",
+          "job_description": "We’re in search of a Back-End Software Engineer...",
+          "location": "Bangalore",
+          "package_per_annum": "21 LPA",
+          "rating": 4,
+          "title": "Backend Engineer"
+        }
+      ],
+      "total": 25
+    }
+    ```
+
+### **Job Details API**
+* **API:** `https://apis.ccbp.in/jobs/:id`
+* **Method:** `GET`
+* **Sample Output:**
+    ```json
+    {
+      "job_details": {
+        "company_logo_url": "[https://assets.ccbp.in/frontend/react-js/jobby-app/netflix-img.png](https://assets.ccbp.in/frontend/react-js/jobby-app/netflix-img.png)",
+        "company_website_url": "[https://about.netflix.com/en](https://about.netflix.com/en)",
+        "employment_type": "Internship",
+        "id": "bb95e51b-b1b2-4d97-bee4-1d5ec2b96751",
+        "job_description": "We are looking for a DevOps Engineer..."
+      }
+    }
+    ```
+---
+
 ## **Setup and Run**
 
 Follow these steps to get the project up and running on your local machine.
 
 **1. Clone the repository:**
 ```bash
-git clone [https://github.com/your-username/jobby-app.git](https://github.com/your-username/jobby-app.git)
-cd jobby-app
+git clone [https://github.com/pakupodisathish/jobbyApp.git](https://github.com/pakupodisathish/jobbyApp.git)
+cd jobbyApp
 
 
 
@@ -93,90 +153,6 @@ cd jobby-app
 
 
 
-
-
-
-
-
-In this project, let's build a **Jobby App** by applying the concepts we have learned till now.
-
-### Refer to videos below:
-
-<div style="text-align: center;">
-  <video style="max-width:80%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12);outline:none;" loop="true" autoplay="autoplay" controls="controls" muted>
-    <source src="https://assets.ccbp.in/frontend/content/react-js/jobby-app-success-output-v0.mp4" type="video/mp4">
-  </video>
-</div>
-<br/>
-
-**Failure View** <br/>
-
-<div style="text-align: center;">
-  <video style="max-width:80%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12);outline:none;" loop="true" autoplay="autoplay" controls="controls" muted>
-    <source src="https://assets.ccbp.in/frontend/content/react-js/jobby-app-failure-output-v1.mp4" type="video/mp4">
-  </video>
-</div>
-<br/>
-
-### Design Files
-
-<details>
-<summary>Login Route</summary>
-
-- [Extra Small (Size < 576px) and Small (Size >= 576px) - Login](https://assets.ccbp.in/frontend/content/react-js/jobby-app-login-sm-outputs.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Login](https://assets.ccbp.in/frontend/content/react-js/jobby-app-login-lg-output.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Login Failure](https://assets.ccbp.in/frontend/content/react-js/jobby-app-login-failure-lg-output.png)
-</details>
-
-<details>
-<summary>Home Route</summary>
-
-- [Extra Small (Size < 576px) and Small (Size >= 576px) - Home](https://assets.ccbp.in/frontend/content/react-js/jobby-app-home-sm-output.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Home](https://assets.ccbp.in/frontend/content/react-js/jobby-app-home-lg-output.png)
-</details>
-
-<details>
-<summary>Jobs Route</summary>
-
-- [Extra Small (Size < 576px) and Small (Size >= 576px) - Jobs](https://assets.ccbp.in/frontend/content/react-js/jobby-app-jobs-sm-outputs.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Jobs Success](https://assets.ccbp.in/frontend/content/react-js/jobby-app-jobs-success-lg-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - No Jobs](https://assets.ccbp.in/frontend/content/react-js/jobby-app-no-jobs-lg-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Profile Failure](https://assets.ccbp.in/frontend/content/react-js/jooby-app-profile-failure-lg-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Jobs Failure](https://assets.ccbp.in/frontend/content/react-js/jobby-app-jobs-failure-lg-output-v0.png)
-</details>
-
-<details>
-<summary>Job Item Details Route</summary>
-
-- [Extra Small (Size < 576px) and Small (Size >= 576px) - Job Details Success](https://assets.ccbp.in/frontend/content/react-js/jobby-app-job-details-success-sm-output-v0.png)
-- [Extra Small (Size < 576px) and Small (Size >= 576px) - Job Details Failure](https://assets.ccbp.in/frontend/content/react-js/jobby-app-job-details-failure-sm-output.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Job Details Success](https://assets.ccbp.in/frontend/content/react-js/jobby-app-job-details-success-lg-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Job Details Failure](https://assets.ccbp.in/frontend/content/react-js/jobby-app-job-details-failure-lg-output.png)
-</details>
-
-<details>
-<summary>Not Found Route</summary>
-
-- [Extra Small (Size < 576px) and Small (Size >= 576px) - Not Found](https://assets.ccbp.in/frontend/content/react-js/jobby-app-not-found-sm-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px) - Not Found](https://assets.ccbp.in/frontend/content/react-js/jobby-app-not-found-lg-output-v0.png)
-</details>
-
-### Set Up Instructions
-
-<details>
-<summary>Click to view</summary>
-
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
-
-### Completion Instructions
-
-<details>
-<summary>Functionality to be added</summary>
-<br/>
-
-The app must have the following functionalities
 
 - **Login Route**
 
