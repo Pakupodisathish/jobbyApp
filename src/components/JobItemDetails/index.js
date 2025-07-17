@@ -57,7 +57,7 @@ class JobItemDetails extends Component {
       const jobDetails = data.job_details
       const similarJobs = data.similar_jobs
       const updatedJobDetails = {
-        title:jobDetails.title,
+        title: jobDetails.title,
         companyLogoUrl: jobDetails.company_logo_url,
         companyWebsiteUrl: jobDetails.company_website_url,
         employmentType: jobDetails.employment_type,
