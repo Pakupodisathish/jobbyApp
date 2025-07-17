@@ -19,7 +19,10 @@ Jobby App is a dynamic and responsive job search application built with React. I
 ![Home page](https://github.com/user-attachments/assets/ae7be88c-1532-4dfc-9d6a-9e42996fb721)
 
 ### Jobs Page
-![jobs page]()
+![jobs page](https://github.com/user-attachments/assets/881dd624-3b8e-4be4-ab37-cda6d1721410)
+
+### JobItemDetails page part 1
+![job item]()
 
 ---
 
